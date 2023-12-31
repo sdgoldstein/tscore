@@ -5,11 +5,12 @@
   "type": "module",
   "exports": {
     "./jscore": {
-      "import": "./build/index.js",
-      "types": "./build/index.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
+    "prepack": "npmignore --auto & cp -r build/main/ dist/",
     "build": "tsc",
     "clean": "rm -rf ./build",
     "test": "vitest --run",
@@ -17,13 +18,38 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "typescript": "5.3.3",
     "@types/node": "20.10.6",
-    "vitest": "1.1.0",
-    "eslint": "8.56.0",
     "@typescript-eslint/eslint-plugin": "6.16.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-sonarjs": "0.23.0",
-    "eslint-plugin-import": "2.29.1"
+    "npmignore": "^0.3.1",
+    "typescript": "5.3.3",
+    "vitest": "1.1.0"
   },
-  "dependencies": {}
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdgoldstein/tscore.git"
+  },
+  "publishConfig": {
+    "ignore": [
+      ".clang-format",
+      ".eslintrc.cjs",
+      "build/",
+      "src/",
+      "tsconfig.json",
+      "vitest.config.ts"
+    ]
+  },
+  "keywords": [
+    "Typescript",
+    "Core"
+  ],
+  "author": "sdgoldstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdgoldstein/tscore/issues"
+  },
+  "homepage": "https://github.com/sdgoldstein/tscore#readme"
 }
