@@ -1,0 +1,29 @@
+{
+  "name": "@kameleon/tscore",
+  "version": "0.1.0",
+  "description": "Typescript utility code",
+  "type": "module",
+  "exports": {
+    "./jscore": {
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf ./build",
+    "test": "vitest --run",
+    "test_watch": "vitest",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "@types/node": "20.10.6",
+    "vitest": "1.1.0",
+    "eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "6.16.0",
+    "eslint-plugin-sonarjs": "0.23.0",
+    "eslint-plugin-import": "2.29.1"
+  },
+  "dependencies": {}
+}
