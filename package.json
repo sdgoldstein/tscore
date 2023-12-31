@@ -1,10 +1,10 @@
 {
-  "name": "@kameleon/tscore",
+  "name": "@sphyrna/tscore",
   "version": "0.1.0",
   "description": "Typescript utility code",
   "type": "module",
   "exports": {
-    "./jscore": {
+    ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
@@ -34,9 +34,9 @@
   },
   "publishConfig": {
     "ignore": [
+      "!dist/",
       ".clang-format",
       ".eslintrc.cjs",
-      "build/",
       "src/",
       "tsconfig.json",
       "vitest.config.ts"
